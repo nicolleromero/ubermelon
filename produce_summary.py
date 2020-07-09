@@ -2,9 +2,8 @@
 
 def read_produce_summary(day, file):
     """Functiont to read text file"""
-    data = open(file)
 
-    for line in data:
+    for line in file:
         line = line.rstrip()
         tokens = line.split('|')
 
@@ -22,13 +21,15 @@ def print_produce_summary(day, tokens):
 
 
 
-def process_produce_summary(day, file):
+def process_produce_summary(day, filename):
+
+    file = open(filename)
 
     print(f"Day {day}:")
 
     read_produce_summary(day, file)
 
-    # file.close()
+    file.close()
 
 
 process_produce_summary(1, "um-deliveries-20140519.txt")
