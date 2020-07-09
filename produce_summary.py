@@ -10,8 +10,6 @@ def read_produce_summary(day, file):
 
         print_produce_summary(day, tokens)
 
-    return tokens
-
 
 def print_produce_summary(day, tokens):
     """Function to print summary"""
@@ -28,7 +26,7 @@ def process_produce_summary(day, file):
 
     print(f"Day {day}:")
 
-    tokens = read_produce_summary(day, file)
+    read_produce_summary(day, file)
 
     # file.close()
 
