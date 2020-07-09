@@ -1,7 +1,7 @@
 """Function to process and print produce summaries"""
 
 def read_produce_summary(day, file):
-    """Functiont to read text file"""
+    """Function to read text file"""
 
     for line in file:
         line = line.rstrip()
@@ -11,7 +11,7 @@ def read_produce_summary(day, file):
 
 
 def print_produce_summary(day, tokens):
-    """Function to print summary"""
+    """Function to tokenize and print summary"""
 
     melon = tokens[0]
     count = int(tokens[1])
@@ -22,6 +22,7 @@ def print_produce_summary(day, tokens):
 
 
 def process_produce_summary(day, filename):
+    """Main function to produce report"""
 
     file = open(filename)
 
