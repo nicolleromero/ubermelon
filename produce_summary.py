@@ -1,43 +1,47 @@
-print("Day 1")
-the_file = open("um-deliveries-20140519.txt")
-for line in the_file:
-    line = line.rstrip()
-    words = line.split('|')
+"""Function to process and print produce summaries"""
 
-    melon = words[0]
-    count = words[0]
-    amount = words[0]
+def read_produce_summary(day, file):
+    """Functiont to read text file"""
+    data = open(file)
 
-    print("Delivered {} {}s for total of ${}".format(
-        count, melon, amount))
-the_file.close()
+    for line in data:
+        line = line.rstrip()
+        tokens = line.split('|')
 
+        print_produce_summary(day, tokens)
 
-print("Day 2")
-the_file = open("um-deliveries-20140520.txt")
-for line in the_file:
-    line = line.rstrip()
-    words = line.split('|')
-
-    melon = words[0]
-    count = words[0]
-    amount = words[0]
-
-    print("Delivered {} {}s for total of ${}".format(
-        count, melon, amount))
-the_file.close()
+    return tokens
 
 
-print("Day 3")
-the_file = open("um-deliveries-20140521.txt")
-for line in the_file:
-    line = line.rstrip()
-    words = line.split('|')
+def print_produce_summary(day, tokens):
+    """Function to print summary"""
 
-    melon = words[0]
-    count = words[0]
-    amount = words[0]
+    melon = tokens[0]
+    count = int(tokens[1])
+    amount = tokens[2]
 
-    print("Delivered {} {}s for total of ${}".format(
-        count, melon, amount))
-the_file.close()
+    print(f"Delivered {count} {melon}s for a total of ${amount}")
+
+
+
+def process_produce_summary(day, file):
+
+    print(f"Day {day}:")
+
+    tokens = read_produce_summary(day, file)
+
+    # file.close()
+
+
+process_produce_summary(1, "um-deliveries-20140519.txt")
+process_produce_summary(2, "um-deliveries-20140520.txt")
+process_produce_summary(3, "um-deliveries-20140521.txt")
+
+
+
+
+
+
+
+
+
