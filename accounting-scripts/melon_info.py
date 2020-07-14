@@ -19,10 +19,24 @@
 
 # New script
 
-from melons import melon_inventory
+from melons import *
+
+
+def add_info(inventory, new_category):
+
+    for k in inventory:
+        inventory[k].setdefault(new_category, None)
+
+    return inventory
+
+# print(add_info(melon_inventory, 'Define Local'))
+
+
 
 
 def print_melon_new(melon_inventory):
+
+    add_info(melon_inventory, 'Define Local')
 
     for melon in melon_inventory.items():
 

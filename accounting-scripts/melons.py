@@ -66,10 +66,4 @@ melon_inventory = {
 
 }
 
-def add_info(inventory, new_category):
-
-    inventory.setdefault(new_category, None)
-
-    return dict
-
 
