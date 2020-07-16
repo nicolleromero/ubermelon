@@ -13,15 +13,18 @@ for line in f:
     salesperson = entries[0]
     melons = int(entries[2])
 
-# Using a different data structure (dict instead of lists) would 
-# allow you to loop once and print the report in that loop
-    if salesperson in salespeople:
-        position = salespeople.index(salesperson)
+""" Using a different data structure (dict instead of lists) would
+ allow you to loop once and print the report in that loop
+ """
 
-        melons_sold[position] += melons
-    else:
-        salespeople.append(salesperson)
-        melons_sold.append(melons)
+
+if salesperson in salespeople:
+    position = salespeople.index(salesperson)
+
+    melons_sold[position] += melons
+else:
+    salespeople.append(salesperson)
+    melons_sold.append(melons)
 
 
 for i in range(len(salespeople)):
